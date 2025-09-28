@@ -1,4 +1,4 @@
-import { UserPage } from "./Auth/ui/pages/UserPage"
+import { UserPage } from "../Auth/ui/pages/UserPage"
 
 function App() {
 
