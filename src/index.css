@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@theme {
+  --color-authbg: #C33737;
+  --font-family-sans: Poppins, ui-sans-serif, system-ui, sans-serif;
+}
+
+
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,13 +29,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+/* Estilos por defecto solo para enlaces que no tengan clases personalizadas */
+a:not([class]) {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
-a:hover {
+a:not([class]):hover {
   color: #535bf2;
+}
+
+/* Permite que los enlaces con clases personalizadas mantengan sus estilos */
+a[class] {
+  text-decoration: none;
 }
 
 body {
@@ -67,4 +87,211 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Animaciones para modales */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+}
+
+/* Animación de salida hacia el fondo */
+@keyframes slideToBack {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0) translateZ(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.8) translateY(20px) translateZ(-50px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3) translateY(100vh) translateZ(-200px);
+  }
+}
+
+/* Animación del fondo durante la salida */
+@keyframes backgroundFadeOut {
+  from {
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  to {
+    backdrop-filter: blur(0px);
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+.animate-slideToBack {
+  animation: slideToBack 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-backgroundFadeOut {
+  animation: backgroundFadeOut 0.8s ease-out forwards;
+}
+
+/* Animación de la barra de progreso */
+@keyframes progressBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Animaciones para el indicador deslizante de pestañas */
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-right {
+  animation: slideRight 0.3s ease-in-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.3s ease-in-out forwards;
+}
+
+/* Estilos para el contenedor de pestañas con indicador animado */
+.tab-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ef4444, #dc2626, #ef4444);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+/* Efecto shimmer para el indicador */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Efecto hover mejorado para las pestañas */
+.tab-link:hover {
+  transform: translateY(-1px);
+  text-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+/* Animaciones para transición de formularios */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Clases de animación para formularios */
+.form-slide-in-right {
+  animation: slideInFromRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.form-slide-out-left {
+  animation: slideOutToLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.form-slide-in-left {
+  animation: slideInFromLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.form-slide-out-right {
+  animation: slideOutToRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Contenedor de formularios con overflow hidden */
+.form-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
 }
