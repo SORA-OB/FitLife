@@ -44,13 +44,13 @@ export const PasswordInput = ({ value, onChange, name }) => {
         onChange={handlePasswordChange}
         placeholder={name}
         maxLength={50}
-        className="placeholder-red-500 peer w-full px-4 py-3 text-gray-900 text-lg border-2 border-red-500 rounded-xl shadow-md bg-gray-200 pr-12 focus:outline-none focus:border-red-600 focus:ring-2 focus:ring-red-600/50"
+        className="placeholder-gray-500 peer w-full px-4 py-3 text-gray-900 text-lg border-2 border-gray-200 rounded-xl shadow-sm bg-white pr-12 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-400/20 transition-all duration-200"
       />
 
       {/* Botón para el icono */}
       <div
         onClick={togglePasswordVisibility}
-        className="absolute inset-y-0 right-0 pr-3 flex items-center text-red-500 transition-colors duration-200 hover:text-red-700"
+        className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 transition-colors duration-200 hover:text-gray-700 cursor-pointer"
       >
         {/* Cambia el icono basado en el estado 'showPassword' */}
         {showPassword ? (

@@ -26,10 +26,10 @@ export const LoginRegister: React.FC<Props> = ({ children }) => {
     }, [frases.length]);
 
     return (
-        <div className="bg-authbg min-h-screen w-screen flex justify-center items-center">
-            <div className="flex flex-row ">
+        <div className="bg-gray-50 min-h-screen w-screen flex justify-center items-center">
+            <div className="flex flex-row shadow-2xl rounded-2xl overflow-hidden">
                 {/* Panel izquierdo con frase + imagen */}
-                <div className="flex flex-col justify-between bg-[#DC817D] h-[581.6px] w-[423px] rounded-l-[14px] p-10">
+                <div className="flex flex-col justify-between bg-gradient-to-br from-red-800 to-red-400 h-[581.6px] w-[423px] p-10">
                     {/* Frase */}
                     <div className="flex justify-center  flex-1">
                         <p className="text-white text-[21px] font-sans font-light italic text-center">
@@ -48,12 +48,12 @@ export const LoginRegister: React.FC<Props> = ({ children }) => {
                 </div>
 
                 {/* Panel derecho con children */}
-                <div className="bg-gray-200 h-[581px] w-[528px] rounded-r-[14px] flex flex-col shadow-md">
-                    <div className="p-6">
+                <div className="bg-white h-[581px] w-[528px] flex flex-col">
+                    <div className="p-8 pb-0">
                         <AuthTabs />
                     </div>
                     <main className="form-container flex-1 w-full relative overflow-hidden">
-                        <div className="absolute inset-0 flex justify-center p-6">
+                        <div className="absolute inset-0 flex justify-center px-8 py-4">
                             <div className="w-full max-w-md">
                                 {children}
                             </div>

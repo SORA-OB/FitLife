@@ -35,7 +35,6 @@ export const Login = () => {
 
         setMessage(result.message);
         if (result.success) {
-            console.log('Usuario logueado', result.user)
             setIsModalOpen(true);
         }
     }
@@ -64,10 +63,10 @@ export const Login = () => {
                         <button
                             onClick={() => handleLogin()}
                             disabled={isLoading}
-                            className="w-full mt-4 py-3 text-xl font-bold text-white rounded-xl shadow-lg shadow-red-500/50 transition-all duration-200 bg-red-500 hover:bg-red-600 transform active:scale-[0.98]"
-                        > {isLoading ? 'Validando...' : 'LOGIN'}
+                            className="w-full mt-6 py-3 text-xl font-bold text-white rounded-xl shadow-lg shadow-red-500/25 transition-all duration-200 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+                        > {isLoading ? 'Validando...' : 'INICIAR SESIÓN'}
                         </button>
-                        {message && <p className=" text-red-500 text-center text-m bold mt-2">{message}</p>}
+                        {message && <p className="text-red-500 text-center text-sm mt-3 px-2">{message}</p>}
                     </div>
                 </div>
             </LoginRegister>

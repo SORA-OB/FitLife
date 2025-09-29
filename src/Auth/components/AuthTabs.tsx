@@ -31,42 +31,40 @@ export const AuthTabs = () => {
     }, [isLogin, isRegister]);
 
     return (
-        <div className="relative flex mb-12 border-b border-red-200 tab-container">
+        <div className="relative flex mb-12 border-b border-gray-200 tab-container">
             <Link 
                 ref={loginTabRef}
                 to="/"
                 className={`tab-link pb-3 px-4 text-xl font-bold cursor-pointer transition-all duration-300 no-underline relative z-10 ${
                     isLogin 
-                        ? 'text-[#CE1E1E]' 
-                        : 'text-[#D67E7E] hover:text-red-500'
+                        ? 'text-gray-900' 
+                        : 'text-gray-500 hover:text-gray-700'
                 }`}
                 style={{
-                    color: isLogin ? '#CE1E1E' : '#D67E7E',
                     textDecoration: 'none'
                 }}
             >
-                LOGIN
+                INICIAR SESIÓN
             </Link>
             <Link 
                 ref={registerTabRef}
                 to="/register"
                 className={`tab-link pb-3 px-4 text-xl font-bold cursor-pointer transition-all duration-300 no-underline relative z-10 ${
                     isRegister 
-                        ? 'text-[#CE1E1E]' 
-                        : 'text-[#D67E7E] hover:text-red-500'
+                        ? 'text-gray-900' 
+                        : 'text-gray-500 hover:text-gray-700'
                 }`}
                 style={{
-                    color: isRegister ? '#CE1E1E' : '#D67E7E',
                     textDecoration: 'none'
                 }}
             >
-                SIGN UP
+                REGISTRATE
             </Link>
             
             {/* Indicador deslizante animado */}
             <div 
                 ref={indicatorRef}
-                className="tab-indicator absolute bottom-0 h-1 bg-red-500 rounded-t-sm"
+                className="tab-indicator absolute bottom-0 h-1 bg-gradient-to-r from-red-500 to-pink-500 rounded-t-sm shadow-lg shadow-red-500/25"
                 style={{
                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}
