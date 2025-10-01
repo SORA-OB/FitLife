@@ -5,6 +5,8 @@ import { HomePage } from './Home/pages/Home'
 import { TransitionProvider } from './Auth/contexts/TransitionContext'
 import { MainLayout } from './globalSources/layouts/MainLayout'
 import { NotFoundPage } from './globalSources/components/PageErrorBoundary'
+import { ExercisesPage } from './Exercises/pages/ExercisesPage'
+import { RoutinesPage } from './Routines/pages/RoutinesPage'
 
 function App() {
 
@@ -16,6 +18,16 @@ function App() {
         <Route path='/home' element={<HomePage/>}/>
         
         {/* Rutas protegidas que usan el MainLayout */}
+        <Route path='/exercises' element={
+          <MainLayout>
+            <ExercisesPage />
+          </MainLayout>
+        }/>
+        <Route path='/routines' element={
+          <MainLayout>
+            <RoutinesPage />
+          </MainLayout>
+        }/>
         <Route path='/workouts' element={
           <MainLayout>
             <div>Página de Entrenamientos (En desarrollo)</div>
@@ -24,26 +36,6 @@ function App() {
         <Route path='/progress' element={
           <MainLayout>
             <div>Página de Progreso (En desarrollo)</div>
-          </MainLayout>
-        }/>
-        <Route path='/nutrition' element={
-          <MainLayout>
-            <div>Página de Nutrición (En desarrollo)</div>
-          </MainLayout>
-        }/>
-        <Route path='/goals' element={
-          <MainLayout>
-            <div>Página de Objetivos (En desarrollo)</div>
-          </MainLayout>
-        }/>
-        <Route path='/analytics' element={
-          <MainLayout>
-            <div>Página de Analíticas (En desarrollo)</div>
-          </MainLayout>
-        }/>
-        <Route path='/calendar' element={
-          <MainLayout>
-            <div>Página de Calendario (En desarrollo)</div>
           </MainLayout>
         }/>
         <Route path='/profile' element={

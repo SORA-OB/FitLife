@@ -104,10 +104,10 @@ export const Sidebar: React.FC = () => {
             description: 'Panel principal con resumen de actividades'
         },
         {
-            id: 'workouts',
+            id: 'routines',
             label: 'Rutinas',
             icon: FiActivity,
-            path: '/workouts',
+            path: '/routines',
             /*badge: 3,*/
             description: 'Gestiona tus rutinas de ejercicios'
         },
@@ -207,33 +207,15 @@ export const Sidebar: React.FC = () => {
                             />
                         ))}
                     </div>
-
+                    {/** /}
                     {/* Separador */}
-                    <div className="my-8 border-t border-gray-200" />
-
-                    {/* Label de configuración */}
-                    <div className="px-3 mb-4">
-                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                            Configuración
-                        </p>
-                    </div>
-
-                    {/* Sección de configuración */}
-                    <div className="space-y-1">
-                        {configItems.map((item) => (
-                            <SidebarItem
-                                key={item.id}
-                                item={item}
-                                isActive={isActiveRoute(item.path)}
-                                onHover={setHoveredItem}
-                                hoveredItem={hoveredItem}
-                            />
-                        ))}
-                    </div>
+                    
+                    
                 </div>
             </nav>
 
             {/* Footer con botón de logout */}
+            {/**
             <div className="border-t border-gray-200 p-4">
                 <button
                     onClick={handleLogout}
@@ -256,7 +238,8 @@ export const Sidebar: React.FC = () => {
                         Cerrar Sesión
                     </span>
                 </button>
-            </div>
+            </div>/
+             */}
         </aside>
     );
 };
