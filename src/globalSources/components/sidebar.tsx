@@ -10,7 +10,8 @@ import {
     FiLogOut,
     FiTarget,
     FiBarChart,
-    FiHeart
+    FiHeart,
+    FiCoffee
 } from 'react-icons/fi';
 import { FaDumbbell } from 'react-icons/fa6';
 
@@ -117,6 +118,20 @@ export const Sidebar: React.FC = () => {
             icon: FaDumbbell,
             path: '/exercises',
             description: 'Gestiona ejercicios de manera personalizada'
+        },
+        {
+            id: 'schedule',
+            label: 'Agenda',
+            icon: FiCalendar,
+            path: '/schedule',
+            description: 'Planifica y organiza tus sesiones de entrenamiento'
+        },
+        {
+            id: 'nutrition',
+            label: 'Nutrición',
+            icon: FiCoffee,
+            path: '/nutrition',
+            description: 'Gestiona tu alimentación y planes nutricionales'
         },
         /** 
         {

@@ -7,6 +7,8 @@ import { MainLayout } from './globalSources/layouts/MainLayout'
 import { NotFoundPage } from './globalSources/components/PageErrorBoundary'
 import { ExercisesPage } from './Exercises/pages/ExercisesPage'
 import { RoutinesPage } from './Routines/pages/RoutinesPage'
+import { SchedulePage } from './Schedule/pages/SchedulePage'
+import { NutritionPage } from './Nutrition/pages/NutritionPage'
 
 function App() {
 
@@ -28,9 +30,14 @@ function App() {
             <RoutinesPage />
           </MainLayout>
         }/>
-        <Route path='/workouts' element={
+        <Route path='/schedule' element={
           <MainLayout>
-            <div>Página de Entrenamientos (En desarrollo)</div>
+            <SchedulePage />
+          </MainLayout>
+        }/>
+        <Route path='/nutrition' element={
+          <MainLayout>
+            <NutritionPage />
           </MainLayout>
         }/>
         <Route path='/progress' element={
